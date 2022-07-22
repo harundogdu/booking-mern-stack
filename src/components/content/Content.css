@@ -1,0 +1,196 @@
+.content {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content .contentContainer {
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+}
+
+.content .contentContainer .infoArea {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    font-size: 13px;
+    align-items: center;
+    background-color: #ffe9ed;
+}
+
+.content .contentContainer .featuredArea {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 5px;
+}
+
+.content .contentContainer .featuredArea .title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.content .contentContainer .featuredArea .featuredContainer {
+    display: flex;
+    gap: 10px;
+}
+
+.content .contentContainer .featuredArea .featuredContainer .featuredItem {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 10px;
+    transition: 400ms ease-in-out all;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+
+}
+
+.content .contentContainer .featuredArea .featuredContainer .featuredItem:hover {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    background-color: #000;
+}
+
+.content .contentContainer .featuredArea .featuredContainer .featuredItem img {
+    width: 100%;
+    height: 100%;
+    transition: all 400ms ease-in-out;
+    object-fit: cover;
+}
+
+.content .contentContainer .featuredArea .featuredContainer .featuredItem:hover img {
+    transform: scale(1.7);
+    opacity: 0.2;
+}
+
+.content .contentContainer .featuredArea .featuredContainer .featuredItem:hover h2,
+.content .contentContainer .featuredArea .featuredContainer .featuredItem:hover h3 {
+    z-index: 2;
+    color: #fff;
+}
+
+.content .contentContainer .featuredArea .featuredContainer .featuredItem>h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 5px 0;
+    transition: all 400ms ease-in-out;
+}
+
+.content .contentContainer .featuredArea .featuredContainer .featuredItem>h3 {
+    font-size: 14px;
+    font-weight: 400;
+    transition: all 400ms ease-in-out;
+}
+
+.content .featuredItems {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.content .featuredItems .featuredItemsContainer {
+    position: relative;
+    width: 32%;
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+.content .featuredItems .featuredItemsContainer #overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: all 400ms ease-in-out;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+.content .featuredItems .featuredItemsContainer:hover #overlay {
+    cursor: pointer;
+    visibility: visible;
+}
+
+.content .featuredItems .featuredItemsContainer:hover .textContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+}
+
+.content .featuredItems .featuredItemsContainer img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.content .featuredItems .featuredItemsContainer .textContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    color: #fff;
+    z-index: 3;
+    transition: all 400ms ease-in-out;
+    transition-delay: 50ms;
+}
+
+.content .discountContainer {
+    display: flex;
+    padding: 30px;
+    background: url("https://t-cf.bstatic.com/static/img/genius-banner-world-bg/2b5cdbad7b92073bc396b8b59d0bb421b3a01cba.png") 100% 0 no-repeat;
+    border: 1px solid #eaeaea;
+}
+
+
+.content .discountContainer .discountInnerContainer .discountTitle {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.content .discountContainer .discountInnerContainer .discountSubTitle {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.content .discountContainer .discountInnerContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.content .discountContainer .discountInnerContainer .discountBtnContainer {
+    display: flex;
+    align-items: center;
+}
+
+.content .discountContainer .discountInnerContainer .discountBtnContainer button {
+    padding: 8px 12px;
+    background-color: #fff;
+    color: #009fe3;
+    border: none;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+}
+
+.content .discountContainer .discountInnerContainer .discountBtnContainer button:hover {
+    background-color: rgba(29, 108, 226, 0.1) !important;
+}
+
+.content .discountContainer .discountInnerContainer .discountBtnContainer button:nth-child(1) {
+    border: 1px solid #009fe3;
+}
