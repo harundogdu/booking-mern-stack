@@ -1,4 +1,4 @@
-import { Navbar, Header } from "components";
+import { Navbar, Header, Content } from "components";
 import "./Home.css";
 
 const Home = () => {
@@ -6,6 +6,7 @@ const Home = () => {
     <div className="home">
       <Navbar />
       <Header />
+      <Content />
     </div>
   );
 };
