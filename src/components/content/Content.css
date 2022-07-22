@@ -176,6 +176,7 @@
 .content .discountContainer .discountInnerContainer .discountBtnContainer {
     display: flex;
     align-items: center;
+    gap: 10px;
 }
 
 .content .discountContainer .discountInnerContainer .discountBtnContainer button {
@@ -193,4 +194,98 @@
 
 .content .discountContainer .discountInnerContainer .discountBtnContainer button:nth-child(1) {
     border: 1px solid #009fe3;
+}
+
+.content .contentContainer .effectArea {
+    border: 1px solid #eaeaea;
+    margin: 10px 0;
+    position: relative;
+    overflow: hidden;
+    height: 250px;
+}
+
+.content .contentContainer .effectArea .effectContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content .contentContainer .effectArea .leftCircle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #feba02;
+    position: absolute;
+    top: 60%;
+    left: -20px;
+    z-index: 1;
+}
+
+.content .contentContainer .effectArea .mainCircle {
+    width: 500px;
+    height: 340px;
+    border-radius: 50%;
+    background-color: #003580;
+    position: absolute;
+    top: -20%;
+    left: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content .contentContainer .effectArea .mainCircle .mainCircleInner {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.content .contentContainer .effectArea .mainCircle .mainCircleInner div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.content .contentContainer .effectArea .mainCircle .mainCircleInner div .typed {
+    text-decoration: underline;
+    text-decoration-color: #feba02;
+}
+
+.content .contentContainer .effectArea .mainCircle button {
+    color: #003580;
+    background-color: #fff;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    margin: 10px 0 0 0;
+    font-weight: 400;
+}
+
+.content .contentContainer .effectArea .rightImage {
+    height: 250px;
+    position: absolute;
+    top: 13%;
+    right: 8%;
+}
+
+.content .contentContainer .effectArea .rightImage img {
+    height: 200px;
+    object-fit: contain;
+}
+
+.content .contentContainer .effectArea .effectBtn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 24px;
 }
