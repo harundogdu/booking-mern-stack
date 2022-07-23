@@ -147,6 +147,8 @@
     z-index: 3;
     transition: all 400ms ease-in-out;
     transition-delay: 50ms;
+    font-weight: 900;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 1);
 }
 
 .content .discountContainer {

@@ -29,7 +29,7 @@ const Content = () => {
         </div>
         <div className="featuredItems">
           {imgArray.map((item) => (
-            <div className="featuredItemsContainer">
+            <div className="featuredItemsContainer" key={item.id}>
               <img src={item.img} alt="" />
               <div className="textContainer">
                 <span className="title">{item.title}</span>
@@ -93,7 +93,6 @@ const Content = () => {
             <AiOutlineClose />
           </button>
         </div>
-        {/* Email Area */}
       </div>
     </div>
   );
