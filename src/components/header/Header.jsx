@@ -7,8 +7,11 @@ import { useState } from "react";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import { format } from "date-fns";
+import { useNavigate } from "react-router-dom";
 
 export default function Header({ type }) {
+  const navigate = useNavigate();
+
   const [firstOpen, setFirstOpen] = useState(false);
   const [openDateModal, setOpenDateModal] = useState(false);
   const [date, setDate] = useState([
@@ -43,6 +46,15 @@ export default function Header({ type }) {
         [name]: operation === "i" ? info[name] + 1 : info[name] - 1,
       };
     });
+  };
+
+  const handleSearchClick = () => {
+    if (!destination || !date || !info) {
+      alert("Please fill all fields");
+      return;
+    }
+
+    navigate("/hotels", { state: { destination, date, info } });
   };
 
   return (
@@ -156,7 +168,7 @@ export default function Header({ type }) {
                 </div>
               )}
             </div>
-            <button className="searchBtn">
+            <button className="searchBtn" onClick={handleSearchClick}>
               <span>Search</span>
             </button>
           </div>

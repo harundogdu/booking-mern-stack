@@ -78,3 +78,21 @@
     font-weight: bold;
     cursor: pointer;
 }
+
+
+.searchList .form-group .searchItemBtn{
+    background-color: #fff;
+    border: none;
+    outline: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    position: relative;
+}
+
+.searchList .form-group .searchItemBtn .melih{
+    position: absolute;
+    right: 15px;
+    top: 25%;
+    color: #003580;
+    font-size: 16px;
+}
