@@ -1,0 +1,161 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .footerContainer {
+    width: 100%;
+}
+
+.footer .footerContainer .emailArea .emailAreaContainer {
+    background-color: #00224F;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    gap: 10px;
+    text-align: center;
+}
+
+.footer .footerContainer .emailArea .emailAreaContainer .emailTitles>h1 {
+    font-size: 26px;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+
+.footer .footerContainer .emailArea .emailAreaContainer .emailTitles>h2 {
+    font-size: 18px;
+    font-weight: 400;
+    color: lightgray;
+}
+
+.footer .footerContainer .emailArea .emailAreaContainer .emailInputContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.footer .footerContainer .emailArea .emailAreaContainer .emailInputContainer .inputInnerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.footer .footerContainer .emailArea .emailAreaContainer .emailInputContainer input {
+    width: 400px;
+    padding: 15px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #003580;
+    font-size: 16px;
+    font-weight: 400;
+    outline: none;
+}
+
+.footer .footerContainer .emailArea .emailAreaContainer .emailInputContainer .inputInnerContainer button {
+    padding: 8px 30px;
+    background-color: #009fe3;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+    height: 50px;
+    font-size: 17px;
+    font-weight: 300;
+    border-radius: 4px;
+}
+
+.footer .footerContainer .emailArea .emailAreaContainer .checkboxInnerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 5px;
+}
+
+.footer .footerContainer .emailArea .emailAreaContainer .checkboxInnerContainer input {
+    width: 12px;
+    height: 12px;
+    border: 1px solid #fff;
+    border-radius: 2px;
+    background-color: #fff;
+    outline: none;
+}
+
+.footer .footerContainer .emailArea .emailAreaContainer .checkboxInnerContainer span {
+    font-size: 13px;
+    font-weight: 400;
+    color: #fff;
+    margin-left: 10px;
+}
+
+.footer .footerContainer .emailArea .emailFooterContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: #003580;
+}
+
+.footer .footerContainer .emailArea .emailFooterContainer .buttonUpper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #fff;
+    padding: 10px 0;
+}
+
+.footer .footerContainer .emailArea .emailFooterContainer .buttonUpper button {
+    border: 1px solid #fff;
+    background-color: transparent;
+    font-size: 12px;
+    border-radius: 4px;
+    padding: 6px 12px;
+    color: #fff;
+}
+
+.footer .footerContainer .emailArea .emailFooterContainer .footerItems {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px 64px;
+}
+
+.footer .footerContainer .emailArea .emailFooterContainer .footerItems a {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 400;
+    text-decoration: underline;
+}
+
+.footer .footerInnerContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 64px;
+}
+
+.footer .footerInnerContainer .list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.footer .footerInnerContainer .list .footerItems a {
+    color: #016f9e;
+    font-size: 12px;
+}
+
+.footer .footerInnerContainer .copyright {
+    font-size: 12px;
+    color: #000;
+    font-weight: 400;
+    margin-top: 10px;
+    text-align: center;
+}
