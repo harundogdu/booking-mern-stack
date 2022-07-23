@@ -1,0 +1,23 @@
+.hotels {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.hotels section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+    flex: 1;
+}
+
+.hotelsArea {
+    flex: 1;
+    max-width: 1024px;
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}

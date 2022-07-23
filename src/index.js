@@ -1,4 +1,4 @@
-import { Home } from "pages";
+import { Home, HotelDetails, Hotels } from "pages";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -9,6 +9,8 @@ root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/hotels" element={<Hotels />} />
+      <Route path="/hotels/:id" element={<HotelDetails />} />
     </Routes>
   </BrowserRouter>
 );
