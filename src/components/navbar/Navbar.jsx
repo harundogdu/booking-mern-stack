@@ -12,11 +12,15 @@ export default function Navbar() {
     navigate("/register");
   };
 
+  const handleLogoClick = () => {
+    navigate("/");
+  }
+
   return (
     <div className="navbar">
       <div className="navbarContainer">
         <div className="navbarLogo">
-          <h1 className="navbarTitle">HDBooking</h1>
+          <h1 className="navbarTitle" onClick={handleLogoClick}>HDBooking</h1>
         </div>
         <div className="navbarButtons">
           <button className="navbarBtn" onClick={handleLoginClick}>
