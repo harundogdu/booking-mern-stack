@@ -1,0 +1,80 @@
+.searchList {
+    flex: .9;
+    background-color: #feba02;
+    padding: 10px;
+    border-radius: 5px;
+    height: max-content;
+    position: sticky;
+    top: 20px;
+}
+
+.searchList .title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #443e3e;
+    margin-bottom: 10px;
+}
+
+.searchList .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+
+.searchList .form-group label {
+    font-size: 13px;
+    font-weight: bold;
+    color: #443e3e;
+}
+
+.searchList .form-group input {
+    padding: 5px;
+    font-size: 13px;
+    color: #443e3e;
+    border: none;
+    outline: none;
+}
+
+.searchList .form-group .subTitle {
+    font-size: 13px;
+    font-weight: bold;
+    color: #443e3e;
+}
+
+.searchList .form-group .properties {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.searchList .form-group .properties .group {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    padding-left: 10px;
+    font-size: 14px;
+}
+
+.searchList .form-group .properties .group input{
+    width: 35%;
+}
+
+.searchList .form-group .properties .group .little {
+    font-size: 12px;
+    font-weight: bold;
+    color: #443e3e;
+    margin-left: 3px;
+}
+
+.searchList .form-group .btnSearch {
+    background-color: #003580;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 0;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
