@@ -1,0 +1,16 @@
+.detailsGallery {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.detailsGallery .detailsGalleryItem {
+    width: calc(33% - 10px);
+    flex-grow: 1;
+}
+
+.detailsGallery .detailsGalleryItem img{
+    width: 100%;
+    object-fit: cover;
+}
