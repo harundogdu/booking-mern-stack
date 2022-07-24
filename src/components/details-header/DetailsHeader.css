@@ -1,0 +1,54 @@
+.detailsArea {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.detailsArea .inner {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.detailsArea .inner .detailHeader .detailsTitle {
+    font-size: 28px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.detailsArea .inner .detailHeader .detailsSubtitle {
+    font-size: 15px;
+    color: #000;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 0 5px;
+    font-weight: 600;
+}
+
+.detailsArea .inner .buttonContainer button{
+    background-color: #009fe3;
+    color: #fff;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.detailsArea .property{
+    color: #009fe3;
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-size:14px;
+}
+
+.detailsArea .taxiArea{
+    color: #279b37;
+    font-weight: 400;
+    margin-bottom: 5px;
+    font-size: 13px;
+}
