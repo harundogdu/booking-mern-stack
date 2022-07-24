@@ -10,11 +10,11 @@ import "./HotelDetails.css";
 
 export default function HotelDetails() {
   return (
-    <div className="hotelDetails">
+    <div className={`hotelDetails`}>
       <Navbar />
       <Header type="list" />
       <section>
-        <main className="hotelDetailsArea">
+        <main className={"hotelDetailsArea"}>
           <DetailsHeader />
           <DetailsGallery />
           <DetailsFooter />
