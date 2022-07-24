@@ -1,0 +1,63 @@
+.detailsFooter {
+    display: flex;
+    justify-content: space-between;
+    gap: 0 10px;
+    padding: 10px 0;
+}
+
+.detailsFooter .footerDetail {
+    padding: 0 20px 0 0;
+    flex: 3;
+}
+
+.footerDetail h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.footerDetail p {
+    font-size: .9rem;
+    margin: 0;
+    font-weight: 300;
+}
+
+.detailsFooter .footerButtons {
+    flex: 1;
+    background-color: #dbebfa;
+    padding: 20px;
+}
+
+.detailsFooter .footerButtons h1 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.detailsFooter .footerButtons .subTitle {
+    font-size: .9rem;
+    margin: 0;
+    font-weight: 300;
+    margin: 10px 0;
+}
+
+.detailsFooter .footerButtons .price {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.detailsFooter .footerButtons button {
+    width: 100%;
+    padding: 8px 12px;
+    text-align: center;
+    color: #fff;
+    background-color: #0e6e9e;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.detailsFooter .footerButtons button:hover {
+    opacity: .9;
+}
