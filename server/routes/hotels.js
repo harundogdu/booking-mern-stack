@@ -9,15 +9,11 @@ import {
 
 const router = express.Router();
 
-// POST Create Hotel
-router.post("/", createHotel);
-// GET Hotels
-router.get("/", getHotels);
-// GET Hotel
-router.get("/:id", getHotel);
-// PUT Update Hotel
-router.put("/:id", updateHotel);
-// DELETE Delete Hotel
-router.delete("/:id", deleteHotel);
+router
+  .post("/", createHotel) // create a new hotel
+  .get("/", getHotels) // get all hotels
+  .get("/:id", getHotel) // get a single hotel
+  .put("/:id", updateHotel) // update a hotel
+  .delete("/:id", deleteHotel); // delete a hotel
 
 export default router;
