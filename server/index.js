@@ -4,6 +4,8 @@ import { connectToMongoDb } from "./config/connection.js";
 import hotelRoute from "./routes/hotels.js";
 import authRoute from "./routes/auth.js";
 import userRoute from "./routes/users.js";
+import roomRoute from "./routes/rooms.js";
+import cookieParser from "cookie-parser";
 
 /* app initialization */
 const app = express();
@@ -13,12 +15,14 @@ dotenv.config();
 connectToMongoDb();
 
 /* middlewares */
+app.use(cookieParser())
 app.use(express.json());
 
 /* define routes */
 app.use("/api/v1/hotels", hotelRoute);
 app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/users", userRoute);
+app.use("/api/v1/rooms", roomRoute);
 
 /* error handling */
 app.use((err, req, res, next) => {
