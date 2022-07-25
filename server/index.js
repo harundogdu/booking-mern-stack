@@ -1,17 +1,26 @@
-import expres from "express";
+import express from "express";
 import dotenv from "dotenv";
 import { connectToMongoDb } from "./config/connection.js";
+import hotelRoute from "./routes/hotels.js";
+
 /* app initialization */
-const app = expres();
+const app = express();
 dotenv.config();
 
 /* mongoDB connection */
 connectToMongoDb();
 
 /* middlewares */
-app.get("/", (req, res) => {
+app.use(express.json());
+
+/* define routes */
+app.use("/api/v1/hotels", hotelRoute);
+
+app.use((req, res) => {
   res.json({
-    message: "Welcome to the API",
+    success: false,
+    status: 404,
+    message: "Route Not Found",
   });
 });
 
