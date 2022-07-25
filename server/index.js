@@ -16,6 +16,20 @@ app.use(express.json());
 /* define routes */
 app.use("/api/v1/hotels", hotelRoute);
 
+/* error handling */
+app.use((err, req, res, next) => {
+  const status = err.status || 500;
+  const message = err.message || "Internal server error";
+  const stack = err.stack || "";
+  return res.status(status).json({
+    success: false,
+    status,
+    message,
+    stack,
+  });
+});
+
+/* 404 Routes */
 app.use((req, res) => {
   res.json({
     success: false,
@@ -24,6 +38,7 @@ app.use((req, res) => {
   });
 });
 
+/* app listen */
 app.listen(1923, () => {
   console.log("Server is running on port 1923");
 });

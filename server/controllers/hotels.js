@@ -1,15 +1,11 @@
+import Hotel from "../models/Hotel.js";
+import { createError } from "../utils/error.js";
+
 export const createHotel = async (req, res, next) => {
   try {
     const newHotel = new Hotel(req.body);
     const isSuccess = await newHotel.save();
-
-    if (!isSuccess) {
-      res.status(400).json({
-        success: false,
-        message: "Hotel not created",
-        status: 400,
-      });
-    }
+    if (!isSuccess) return next(createError(400, "Hotel not created"));
 
     res.status(201).json({
       success: true,
@@ -17,11 +13,7 @@ export const createHotel = async (req, res, next) => {
       data: newHotel,
     });
   } catch (err) {
-    res.status(400).json({
-      success: false,
-      status: 400,
-      message: err.message,
-    });
+    next(err);
   }
 };
 
@@ -34,35 +26,22 @@ export const getHotels = async (req, res, next) => {
       data: Hotels,
     });
   } catch (err) {
-    res.status(400).json({
-      success: false,
-      status: 400,
-      message: err.message,
-    });
+    next(err);
   }
 };
 
 export const getHotel = async (req, res, next) => {
   try {
     const fetchingHotel = await Hotel.findById(req.params.id);
-    if (!fetchingHotel) {
-      res.status(404).json({
-        success: false,
-        status: 404,
-        message: "Hotel not found",
-      });
-    }
+    if (!fetchingHotel) return next(createError(404, "Hotel not found"));
+
     res.status(200).json({
       success: true,
       status: 200,
       data: fetchingHotel,
     });
   } catch (err) {
-    res.status(400).json({
-      success: false,
-      status: 400,
-      message: err.message,
-    });
+    next(err);
   }
 };
 
@@ -73,47 +52,30 @@ export const updateHotel = async (req, res, next) => {
       req.body,
       { new: true }
     );
-    if (!updatingHotel) {
-      res.status(404).json({
-        success: false,
-        status: 404,
-        message: "Hotel not found",
-      });
-    }
+
+    if (!updatingHotel) return next(createError(404, "Hotel not updated"));
+
     res.status(200).json({
       success: true,
       status: 200,
       data: updatingHotel,
     });
   } catch (error) {
-    res.status(400).json({
-      success: false,
-      status: 400,
-      message: error.message,
-    });
+    next(err);
   }
 };
 
 export const deleteHotel = async (req, res, next) => {
   try {
     const isDelete = await Hotel.findByIdAndDelete(req.params.id);
-    if (!isDelete) {
-      res.status(404).json({
-        success: false,
-        status: 404,
-        message: "Hotel not found",
-      });
-    }
+    if (!isDelete) return next(createError(404, "Hotel not deleted"));
+
     res.status(200).json({
       success: true,
       status: 200,
       message: "Hotel deleted",
     });
   } catch (error) {
-    res.status(400).json({
-      success: false,
-      status: 400,
-      message: error.message,
-    });
+    next(err);
   }
 };
