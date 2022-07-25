@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import { connectToMongoDb } from "./config/connection.js";
 import hotelRoute from "./routes/hotels.js";
+import authRoute from "./routes/auth.js";
 
 /* app initialization */
 const app = express();
@@ -15,6 +16,7 @@ app.use(express.json());
 
 /* define routes */
 app.use("/api/v1/hotels", hotelRoute);
+app.use("/api/v1/auth", authRoute);
 
 /* error handling */
 app.use((err, req, res, next) => {
