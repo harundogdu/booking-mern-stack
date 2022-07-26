@@ -99,3 +99,39 @@ export const imgArray = [
     subTitle: "3,568 tesis",
   },
 ];
+
+export const hotelArray = [
+  {
+    id: 1,
+    title: "Hilton Garden Inn",
+    city: "Paris",
+    price: 105,
+    point: 8.5,
+    img: "https://t-cf.bstatic.com/xdata/images/hotel/square200/373325864.webp?k=865955482db50525feed534f2832de16c89822cda1774919a162df68af5193a1&o=",
+  },
+  {
+    id: 2,
+    title: "Hotel de Ville",
+    city: "Paris",
+    price: 105,
+    point: 8.5,
+    img: "https://t-cf.bstatic.com/xdata/images/hotel/square200/316219385.webp?k=3ae282b3bccaa27adb63b2fa402da99a3bc737c4fd9dc66b1c89cb0f09b79dfa&o=",
+  },
+  {
+    id: 3,
+    title: "Hotel de Milano",
+    city: "Milano",
+    price: 205,
+    point: 9.5,
+    img: "https://t-cf.bstatic.com/xdata/images/hotel/square200/64331064.webp?k=e287f616ccfba9a2a70ddc1a634964c57b322de157642a638deefad84c24b0cf&o=",
+  },
+
+  {
+    id: 4,
+    title: "Hotel de Londra",
+    city: "Londra",
+    price: 225,
+    point: 9.8,
+    img: "https://t-cf.bstatic.com/xdata/images/hotel/square200/351766364.webp?k=4d456207b96340af4355e58ebd5b9331152a87960ef870a93f450815b600c149&o=",
+  },
+];

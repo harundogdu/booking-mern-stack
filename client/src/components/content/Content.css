@@ -90,6 +90,19 @@
     transition: all 400ms ease-in-out;
 }
 
+.content .featuredItemsArea {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+.content .featuredItemsArea .title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
 .content .featuredItems {
     display: flex;
     gap: 10px;
@@ -149,6 +162,77 @@
     transition-delay: 50ms;
     font-weight: 900;
     text-shadow: 0 0 10px rgba(0, 0, 0, 1);
+}
+
+.content .featured {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+.content .featured .title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+.content .featured .fItems {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.content .featured .fItems .fItemsContainer {
+    width: 24%;
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+.content .featured .fItems .fItemsContainer img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.content .featured .fItems .fItemsContainer .textContainer .title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.content .featured .fItems .fItemsContainer .textContainer .city {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.727);
+}
+
+.content .featured .fItems .fItemsContainer .textContainer .price {
+    font-size: 15px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.827);
+}
+
+.content .featured .fItems .fItemsContainer .textContainer .footerText {
+    display: flex;
+    align-items: center;
+    gap: 0 10px;
+    margin: 10px 0;
+}
+
+.content .featured .fItems .fItemsContainer .textContainer .footerText button {
+    background-color: #003580;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 400ms ease-in-out;
+}
+
+.content .featured .fItems .fItemsContainer .textContainer .footerText span {
+    font-weight: 500;
 }
 
 .content .discountContainer {

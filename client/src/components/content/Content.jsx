@@ -1,7 +1,7 @@
 import "./Content.css";
 import { BsInfoCircle } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
-import { featuredItems, imgArray } from "utils/helper";
+import { featuredItems, hotelArray, imgArray } from "utils/helper";
 import Typed from "react-typed";
 
 const Content = () => {
@@ -27,17 +27,39 @@ const Content = () => {
             ))}
           </div>
         </div>
-        <div className="featuredItems">
-          {imgArray.map((item) => (
-            <div className="featuredItemsContainer" key={item.id}>
-              <img src={item.img} alt="" />
-              <div className="textContainer">
-                <span className="title">{item.title}</span>
-                <span className="subTitle">{item.subTitle}</span>
+        <div className="featuredItemsArea">
+          <h1 className="title">Featured Properties</h1>
+          <div className="featuredItems">
+            {imgArray.map((item) => (
+              <div className="featuredItemsContainer" key={item.id}>
+                <img src={item.img} alt="" />
+                <div className="textContainer">
+                  <span className="title">{item.title}</span>
+                  <span className="subTitle">{item.subTitle}</span>
+                </div>
+                <div id="overlay"></div>
               </div>
-              <div id="overlay"></div>
-            </div>
-          ))}
+            ))}
+          </div>
+        </div>
+        <div className="featured">
+          <h1 className="title">Featured</h1>
+          <div className="fItems">
+            {hotelArray.map((item) => (
+              <div className="fItemsContainer" key={item.id}>
+                <img src={item.img} alt="" />
+                <div className="textContainer">
+                  <p className="title">{item.title}</p>
+                  <p className="city">{item.city}</p>
+                  <p className="price">Starting from ${item.price}</p>
+                  <div className="footerText">
+                    <button>{item.point}</button>
+                    <span>Excellent</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
         <div className="discountContainer">
           <img
