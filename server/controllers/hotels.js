@@ -124,3 +124,23 @@ export const featuredProperties = async (req, res, next) => {
     next(error);
   }
 };
+
+export const getHotelsByCity = async (req, res, next) => {
+  try {
+    const minPrice = req.query.min;
+    const maxPrice = req.query.max;
+    if (!minPrice || !maxPrice) {
+      const hotels = await Hotel.find({
+        city: { $regex: req.query.city.toString(), $options: "i" },
+      }).sort({ rating: -1 });
+      return res.status(200).json(hotels);
+    }
+    const hotels = await Hotel.find({
+      city: { $regex: req.query.city.toString(), $options: "i" },
+      cheapestPrice: { $lte: req.query.max, $gte: req.query.min },
+    }).sort({ rating: -1 });
+    res.status(200).json(hotels);
+  } catch (error) {
+    next(error);
+  }
+};
