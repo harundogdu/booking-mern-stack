@@ -1,33 +1,46 @@
+import { Link } from "react-router-dom";
+import { calculateRatingTitle } from "utils/helper";
 import "./HotelListItem.css";
 
-export default function HotelListItem() {
+export default function HotelListItem({ hotel }) {
+  const tempImage =
+    "https://r-xx.bstatic.com/xdata/images/hotel/300x240/100235855.jpeg?k=5b6e6cff16cfd290e953768d63ee15f633b56348238a705c45759aa3a81ba82b&o=";
   return (
     <div className="hotelListItem">
       <div className="hotelListItem__img">
-        <img
-          src="https://r-xx.bstatic.com/xdata/images/hotel/300x240/100235855.jpeg?k=5b6e6cff16cfd290e953768d63ee15f633b56348238a705c45759aa3a81ba82b&o="
-          alt=""
-        />
+        <img src={hotel.photos[0] || tempImage} alt={hotel.name} />
       </div>
       <div className="content">
         <div className="content-properties">
-          <h1 className="title">Tower Street Apartments</h1>
-          <span className="small">500m from center</span>
-          <span className="green-btn">Free airport taxi</span>
-          <strong>Studio Apertment with Air conditioning</strong>
-          <span className="ligth">Entire studio · 1 bathroom · 21m full bed</span>
-          <span className="free">Free cancellition</span>
-          <span className="property">You can cancel later, so lock in this great price today!</span>
+          <h1 className="title">{hotel.name}</h1>
+          <span className="small">{hotel.distance}m from center</span>
+          <span className="green-btn">{hotel.type}</span>
+          <strong>{hotel.title}</strong>
+          <span className="ligth">
+            {hotel.description.length > 80
+              ? hotel.description.substring(0, 80) + "..."
+              : hotel.description}
+          </span>
+          {hotel.freeCancellation && (
+            <>
+              <span className="free">Free cancellition</span>
+              <span className="property">
+                You can cancel later, so lock in this great price today!
+              </span>
+            </>
+          )}
         </div>
         <div className="content-detail">
           <div className="content-point">
-            <span className="state">Excellent</span>
-            <span className="point">8.9</span>
+            <span className="state">{calculateRatingTitle(hotel.rating)}</span>
+            <span className="point">{hotel.rating}</span>
           </div>
           <div className="content-price">
-            <p className="price">$123</p>
+            <p className="price">${hotel.cheapestPrice}</p>
             <p className="text">Includes taxes and fees</p>
-            <button className="btnPrice">See Availabity</button>
+            <Link to={`/hotels/${hotel._id}`} className="btnPrice">
+              See Availabity
+            </Link>
           </div>
         </div>
       </div>

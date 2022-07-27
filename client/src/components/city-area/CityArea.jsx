@@ -3,9 +3,6 @@ import React from "react";
 
 export default function CityArea() {
   const { data, loading } = useFetch("/hotels/countCity");
-  console.log('====================================');
-  console.log(data);
-  console.log('====================================');
   const tempCityImage =
     "https://images.unsplash.com/photo-1444084316824-dc26d6657664?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80";
   return (

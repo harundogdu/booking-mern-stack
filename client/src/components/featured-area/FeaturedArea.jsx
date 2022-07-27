@@ -1,4 +1,5 @@
 import useFetch from "hooks/useFetch";
+import { Link } from "react-router-dom";
 
 export default function FeaturedArea() {
   const { data, loading } = useFetch("/hotels/featuredProperties");
@@ -13,7 +14,11 @@ export default function FeaturedArea() {
           <h1 className="title">Featured</h1>
           <div className="fItems">
             {data.map((item) => (
-              <div className="fItemsContainer" key={item._id}>
+              <Link
+                to={`/hotels/${item._id}`}
+                key={item._id}
+                className="fItemsContainer"
+              >
                 <img
                   src={item.img || tempHotelImage}
                   alt={`Featured ${item._id}`}
@@ -29,7 +34,7 @@ export default function FeaturedArea() {
                     </div>
                   )}
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

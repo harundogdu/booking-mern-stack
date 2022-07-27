@@ -1,0 +1,66 @@
+.detailsGallery {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.detailsGallery .detailsGalleryItem {
+    width: calc(33% - 10px);
+    flex-grow: 1;
+}
+
+.detailsGallery .detailsGalleryItem img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.detailsGallery .detailsGalleryModal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.detailsGallery .detailsGalleryModal img {
+    width: 70%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 0px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.detailsGallery .detailsGalleryModal button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.detailsGallery .detailsGalleryModal .btnLeft {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+}
+
+.detailsGallery .detailsGalleryModal .btnClose {
+    position: absolute;
+    top: 7%;
+    right: 12%;
+}
+
+.detailsGallery .detailsGalleryModal .btnNext {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+}

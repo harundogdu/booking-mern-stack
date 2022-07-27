@@ -4,12 +4,10 @@ import { DateRange } from "react-date-range";
 import "./SearchList.css";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
-import {BsArrowDownSquareFill, BsArrowUpSquareFill} from 'react-icons/bs';
+import { BsArrowDownSquareFill, BsArrowUpSquareFill } from "react-icons/bs";
 
 export default function SearchList({ state }) {
   const [openDateModal, setOpenDateModal] = useState(false);
-
-  const [firstOpen, setFirstOpen] = useState(false);
   const [date, setDate] = useState([
     {
       startDate: state?.date[0].startDate || new Date(),
@@ -52,18 +50,20 @@ export default function SearchList({ state }) {
         </div>
         <div className="form-group">
           <label htmlFor="check-in">Check-in Date</label>
-          <button type="button" className="searchItemBtn" onClick={handleOpenDateModal}>
-            {firstOpen ? (
-              <span>
-                {format(date[0].startDate, "MM/dd/yyyy")} -{" "}
-                {format(date[0].endDate, "MM/dd/yyyy")}
-              </span>
+          <button
+            type="button"
+            className="searchItemBtn"
+            onClick={handleOpenDateModal}
+          >
+            <span>
+              {format(date[0].startDate, "MM/dd/yyyy")} -{" "}
+              {format(date[0].endDate, "MM/dd/yyyy")}
+            </span>
+            {openDateModal ? (
+              <BsArrowUpSquareFill className="melih" />
             ) : (
-              <span onClick={() => setFirstOpen(true)}>
-                Check in - Check out
-              </span>
+              <BsArrowDownSquareFill className="melih" />
             )}
-            {openDateModal ? <BsArrowUpSquareFill className="melih" /> : <BsArrowDownSquareFill className="melih" />}
           </button>
           {openDateModal && (
             <DateRange
