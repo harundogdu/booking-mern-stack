@@ -79,3 +79,48 @@ export const deleteHotel = async (req, res, next) => {
     next(err);
   }
 };
+
+export const countByType = async (req, res, next) => {
+  try {
+    const hotelCount = await Hotel.countDocuments({ type: "hotel" });
+    const aparmentCount = await Hotel.countDocuments({ type: "aparment" });
+    const resortCount = await Hotel.countDocuments({ type: "resort" });
+    const villaConnt = await Hotel.countDocuments({ type: "villa" });
+    const cabinCount = await Hotel.countDocuments({ type: "cabin" });
+
+    res.status(200).json([
+      { type: "hotel", count: hotelCount },
+      { type: "aparment", count: aparmentCount },
+      { type: "resort", count: resortCount },
+      { type: "villa", count: villaConnt },
+      { type: "cabin", count: cabinCount },
+    ]);
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const countByCity = async (req, res, next) => {
+  try {
+    const cityCount = await Hotel.aggregate([
+      { $group: { _id: "$city", count: { $sum: 1 } } },
+    ])
+      .sort({ title: 1 })
+      .sort({ count: -1 })
+      .collation({ locale: "en", caseLevel: true })
+      .limit(6);
+
+    res.status(200).json(cityCount);
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const featuredProperties = async (req, res, next) => {
+  try {
+    const featuredProperties = await Hotel.find({ featured: true }).limit(4);
+    res.status(200).json(featuredProperties);
+  } catch (error) {
+    next(error);
+  }
+};
