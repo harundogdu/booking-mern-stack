@@ -13,3 +13,5 @@ export { default as FeaturedArea } from "./featured-area/FeaturedArea";
 export { default as DiscountArea } from "./discount-area/DiscountArea";
 export { default as EffectArea } from "./effect-area/EffectArea";
 export { default as InfoArea } from "./info-area/InfoArea";
+export { default as HotelsContent } from "./hotels-content/HotelsContent";
+export { default as HotelDetailsContent } from "./hotel-details-content/HotelDetailsContent";
