@@ -135,3 +135,19 @@ export const hotelArray = [
     img: "https://t-cf.bstatic.com/xdata/images/hotel/square200/351766364.webp?k=4d456207b96340af4355e58ebd5b9331152a87960ef870a93f450815b600c149&o=",
   },
 ];
+
+export function calculateRatingTitle(rating) {
+  if (rating < 2) {
+    return "Terrible";
+  } else if (rating < 4) {
+    return "Bad";
+  } else if (rating < 6) {
+    return "Average";
+  } else if (rating < 8) {
+    return "Good";
+  } else if (rating < 10) {
+    return "Excellent";
+  } else {
+    return "Perfect";
+  }
+}
