@@ -82,6 +82,7 @@
     font-weight: bold;
     margin: 5px 0;
     transition: all 400ms ease-in-out;
+    text-transform: capitalize;
 }
 
 .content .contentContainer .featuredArea .featuredContainer .featuredItem>h3 {
