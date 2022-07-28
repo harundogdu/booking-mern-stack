@@ -151,3 +151,11 @@ export function calculateRatingTitle(rating) {
     return "Perfect";
   }
 }
+
+export function dayDifferance(startDate, endDate) {
+  const MILISECONDS_PER_DAY = 1000 * 60 * 60 * 24;
+  const start = new Date(startDate);
+  const end = new Date(endDate);
+  const diff = end.getTime() - start.getTime();
+  return Math.round(diff / MILISECONDS_PER_DAY);
+}
