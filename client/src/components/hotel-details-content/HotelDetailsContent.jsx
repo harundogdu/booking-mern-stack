@@ -3,8 +3,12 @@ import { useEffect, useState } from "react";
 import { HiLocationMarker } from "react-icons/hi";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 import { AiFillCloseCircle } from "react-icons/ai";
+import { useSearch } from "context/SearchContext";
+import { dayDifferance } from "utils/helper";
 
 export default function HotelDetailsContent({ hotel }) {
+  const { dates } = useSearch();
+  console.log(dates);
   const [currentImg, setCurrentImg] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -35,6 +39,17 @@ export default function HotelDetailsContent({ hotel }) {
     window.scrollTo(0, 0);
     body.style.overflow = isOpen ? "hidden" : "auto";
   }, [isOpen]);
+
+  const calculatePrice = () => {
+    const days = dayDifferance(dates[0].startDate, dates[0].endDate);
+    const price = hotel.cheapestPrice * days;
+    return { price, days };
+  };
+
+  const handleReserve = () => {
+    alert('s')
+  }
+
   return (
     <section>
       <main className={"hotelDetailsArea"}>
@@ -48,7 +63,9 @@ export default function HotelDetailsContent({ hotel }) {
               </p>
             </div>
             <div className="buttonContainer">
-              <button className="btnReserve">Reserve or Book Now!</button>
+              <button className="btnReserve" onClick={handleReserve}>
+                Reserve or Book Now!
+              </button>
             </div>
           </div>
           <div className="property">
@@ -96,16 +113,17 @@ export default function HotelDetailsContent({ hotel }) {
             <p>{hotel.description}</p>
           </div>
           <div className="footerButtons">
-            <h1>Perfect for a 9-night stay!</h1>
+            <h1>Perfect for a {calculatePrice().days}-night stay!</h1>
             <p className="subTitle">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
-              consequatur vero eum hic repellat aspernatur.
+              Best way to start your stay in <strong>{hotel.name}</strong> is by
+              booking a stay over ${hotel.cheapestPrice} at this property and
+              get a free airport taxis for your stay.
             </p>
             <p className="price">
-              <strong>$945</strong>
-              <span>(9 nights)</span>
+              <strong>${calculatePrice().price}</strong>
+              <span>({calculatePrice().days} nights)</span>
             </p>
-            <button>Reserve or Book Now!</button>
+            <button onClick={handleReserve}>Reserve or Book Now!</button>
           </div>
         </div>
       </main>

@@ -7,7 +7,6 @@ export default function HotelDetails() {
   const location = useLocation();
   const url = `/hotels/${location.pathname.split("/")[2]}`
   const { data, error, loading } = useFetch(url.toString());
-  console.log(data);
   return (
     <div className={`hotelDetails`}>
       <Navbar />

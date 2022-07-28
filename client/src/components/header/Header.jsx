@@ -8,9 +8,11 @@ import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import { format } from "date-fns";
 import { useNavigate } from "react-router-dom";
+import { useSearch } from "context/SearchContext";
 
 export default function Header({ type }) {
   const navigate = useNavigate();
+  const { dispatch } = useSearch();
 
   const [firstOpen, setFirstOpen] = useState(false);
   const [openDateModal, setOpenDateModal] = useState(false);
@@ -53,7 +55,14 @@ export default function Header({ type }) {
       alert("Please fill all fields");
       return;
     }
-
+    dispatch({
+      type: "NEW_SEARCH",
+      payload: {
+        city: destination,
+        dates: date,
+        info,
+      },
+    });
     navigate("/hotels", { state: { destination, date, info } });
   };
 
