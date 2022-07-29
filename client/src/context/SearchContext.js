@@ -38,6 +38,6 @@ const SearchProvider = ({ children }) => {
   );
 };
 
-export const useSearch = () => useContext(SearchContext);
-
 export default SearchProvider;
+
+export const useSearch = () => useContext(SearchContext);
