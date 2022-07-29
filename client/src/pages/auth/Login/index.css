@@ -1,0 +1,52 @@
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    /* background image  */
+    background: url("https://images.unsplash.com/photo-1508615039623-a25605d2b022?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80") no-repeat;
+    background-size: cover;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 1rem;
+}
+
+.form-group input {
+    font-size: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    outline: none;
+    width: 300px;
+}
+
+.form-group .relativeArea {
+    position: relative;
+}
+
+.form-group .relativeArea .iconArea {
+    position: absolute;
+    right: 3%;
+    top: 60%;
+    transform: translate(-3%, -55%);
+    cursor: pointer;
+    color: #ccc;
+}
+
+.loginButton {
+    font-size: 1rem;
+    padding: 0.5rem;
+    border: 1px solid rgb(81, 26, 170);
+    border-radius: 0.25rem;
+    background-color: rgb(81, 26, 170);
+    color: #fff;
+    cursor: pointer;
+}
