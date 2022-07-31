@@ -15,6 +15,31 @@
     width: 100%;
 }
 
+.navbar .navbarContainer .userArea  {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0 20px;
+}
+
+.navbar .navbarContainer .userArea .username {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.navbar .navbarContainer .userArea button{
+    background-color: #fff;
+    border: none;
+    color: #013074;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: capitalize;
+    padding: 10px;
+}
+
 .navbar .navbarContainer .navbarLogo .navbarTitle {
     font-size: 1.5em;
     color: #fff;

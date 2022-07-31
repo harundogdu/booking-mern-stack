@@ -5,12 +5,18 @@ import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { useSearch } from "context/SearchContext";
 import { dayDifferance } from "utils/helper";
+import * as DateFNS from "date-fns";
+import { useAuth } from "context/AuthContext";
+import { useNavigate } from "react-router-dom";
+import { Reserve } from "components";
 
 export default function HotelDetailsContent({ hotel }) {
+  const navigate = useNavigate();
   const { dates } = useSearch();
-  console.log(dates);
+  const { user } = useAuth();
   const [currentImg, setCurrentImg] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
 
   const handleItemClick = (index) => {
     setIsOpen(true);
@@ -41,14 +47,22 @@ export default function HotelDetailsContent({ hotel }) {
   }, [isOpen]);
 
   const calculatePrice = () => {
-    const days = dayDifferance(dates[0].startDate, dates[0].endDate);
+    const startDate = dates[0] ? new Date(dates[0].startDate) : new Date();
+    const endDate = dates[0]
+      ? new Date(dates[0].endDate)
+      : DateFNS.addDays(new Date(), 1);
+    const days = dayDifferance(startDate, endDate);
     const price = hotel.cheapestPrice * days;
     return { price, days };
   };
 
   const handleReserve = () => {
-    alert('s')
-  }
+    if (user) {
+      setOpenModal(true);
+    } else {
+      navigate("/login");
+    }
+  };
 
   return (
     <section>
@@ -127,6 +141,13 @@ export default function HotelDetailsContent({ hotel }) {
           </div>
         </div>
       </main>
+      {openModal && (
+        <Reserve
+          hotelId={hotel._id}
+          openModal={openModal}
+          setOpenModal={setOpenModal}
+        />
+      )}
     </section>
   );
 }

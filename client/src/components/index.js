@@ -15,3 +15,4 @@ export { default as EffectArea } from "./effect-area/EffectArea";
 export { default as InfoArea } from "./info-area/InfoArea";
 export { default as HotelsContent } from "./hotels-content/HotelsContent";
 export { default as HotelDetailsContent } from "./hotel-details-content/HotelDetailsContent";
+export { default as Reserve } from "./reserve/Reserve";

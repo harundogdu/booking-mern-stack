@@ -4,7 +4,7 @@ import "./Navbar.css";
 
 export default function Navbar() {
   const navigate = useNavigate();
-  const { user } = useAuth();
+  const { user, dispatch } = useAuth();
 
   const handleLoginClick = () => {
     navigate("/login");
@@ -15,6 +15,11 @@ export default function Navbar() {
   };
 
   const handleLogoClick = () => {
+    navigate("/");
+  };
+
+  const handleLogoutClick = () => {
+    dispatch({ type: "LOGOUT" });
     navigate("/");
   };
 
@@ -34,6 +39,12 @@ export default function Navbar() {
             <button className="navbarBtn" onClick={handleRegisterClick}>
               Register
             </button>
+          </div>
+        )}
+        {user && (
+          <div className="userArea">
+            <div className="username">{user.user.username}</div>
+            <button onClick={handleLogoutClick}>Logout</button>
           </div>
         )}
       </div>
