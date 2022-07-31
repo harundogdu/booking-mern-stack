@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./index.css";
 import { AiFillEye, AiOutlineEye } from "react-icons/ai";
+import axios from "axios";
 
 export default function Login() {
   const [credentials, setCredentials] = useState({
@@ -14,12 +15,25 @@ export default function Login() {
   const { loading, error, dispatch } = useAuth();
   const navigate = useNavigate();
 
-  const handleChange = (e) => {};
+  const handleChange = (e) => {
+    setCredentials({ ...credentials, [e.target.name]: e.target.value });
+  };
 
-  const handleLoginClick = (e) => {};
+  const handleLoginClick = async (e) => {
+    e.preventDefault();
+    dispatch({ type: "LOGIN_START" });
+    try {
+      const response = await axios.post("/auth/login", credentials);
+      dispatch({ type: "LOGIN_SUCCESS", payload: response.data });
+      navigate("/");
+    } catch (error) {
+      dispatch({ type: "LOGIN_FAILURE", payload: error.response.data.message });
+    }
+  };
 
   return (
     <div className="login">
+      {error && <div className="error">{error}</div>}
       <form action="" autoComplete="off">
         <div className="form-group">
           <label htmlFor="username">Username</label>
@@ -35,7 +49,7 @@ export default function Login() {
           <label htmlFor="password">Password</label>
           <div className="relativeArea">
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               id="password"
               name="password"
               placeholder="password"
@@ -44,14 +58,21 @@ export default function Login() {
             <div className="iconArea">
               {" "}
               {showPassword ? (
-                <AiOutlineEye size={22} />
+                <AiOutlineEye
+                  size={22}
+                  onClick={() => setShowPassword(false)}
+                />
               ) : (
-                <AiFillEye size={22} />
+                <AiFillEye size={22} onClick={() => setShowPassword(true)} />
               )}
             </div>
           </div>
         </div>
-        <button className="loginButton" onClick={handleLoginClick}>
+        <button
+          disabled={loading}
+          className="loginButton"
+          onClick={handleLoginClick}
+        >
           Login
         </button>
       </form>

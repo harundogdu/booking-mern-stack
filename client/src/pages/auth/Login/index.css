@@ -44,9 +44,28 @@
 .loginButton {
     font-size: 1rem;
     padding: 0.5rem;
-    border: 1px solid rgb(81, 26, 170);
+    border: 1px solid rgb(26, 124, 170);
     border-radius: 0.25rem;
-    background-color: rgb(81, 26, 170);
+    background-color: rgb(26, 124, 170);
     color: #fff;
     cursor: pointer;
+    width: 100px;
+}
+
+.loginButton:disabled {
+    background-color: #ccc;
+    color: #fff;
+    border: 1px solid #ccc;
+    cursor: not-allowed;
+}
+
+.error{
+    margin: 1rem 0;
+    color: red;
+    font-size: 0.8rem;
+    width: 200px;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
 }
