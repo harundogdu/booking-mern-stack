@@ -6,6 +6,7 @@ import {
   deleteHotel,
   featuredProperties,
   getHotel,
+  getHotelRooms,
   getHotels,
   getHotelsByCity,
   updateHotel,
@@ -15,6 +16,7 @@ import { verifyAdmin } from "../utils/verifyToken.js";
 const router = express.Router();
 
 router
+  .get("/hotelsRooms/:id", getHotelRooms)
   .get("/featuredProperties", featuredProperties)
   .get("/countCity", countByCity)
   .get("/countType", countByType)

@@ -15,8 +15,8 @@ router
   .get("/", getRooms)
   .get("/:id", getRoom)
   .post("/:hotelId", verifyAdmin, createRoom)
-  .put("/:id", verifyAdmin, updateRoom)
   .put("/availability/:id", updateRoomAvailability)
+  .put("/:id", verifyAdmin, updateRoom)
   .delete("/:id/:hotelId", verifyAdmin, deleteRoom);
 
 export default router;

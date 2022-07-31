@@ -1,3 +1,4 @@
+import Room from "../models/Room.js";
 import Hotel from "../models/Hotel.js";
 import { createError } from "../utils/error.js";
 
@@ -140,6 +141,23 @@ export const getHotelsByCity = async (req, res, next) => {
       cheapestPrice: { $lte: req.query.max, $gte: req.query.min },
     }).sort({ rating: -1 });
     res.status(200).json(hotels);
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const getHotelRooms = async (req, res, next) => {
+  try {
+    const hotel = await Hotel.findById(req.params.id);
+    if (!hotel) return next(createError(404, "Hotel not found"));
+
+    const rooms = await Promise.all(
+      hotel.rooms.map((room) => {
+        return Room.findById(room);
+      })
+    );
+
+    res.status(200).json(rooms);
   } catch (error) {
     next(error);
   }
